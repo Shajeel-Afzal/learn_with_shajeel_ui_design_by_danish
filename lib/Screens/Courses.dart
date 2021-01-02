@@ -1,5 +1,6 @@
 import 'package:course/Utils/AppStyle.dart';
 import 'package:course/Utils/Buttons.dart';
+import 'package:course/Widgets/CourseScreenSvg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -35,17 +36,48 @@ class Courses extends StatelessWidget {
                 ),
               ),
               Positioned(
+                top: Get.height * .055,
+                left: Get.width * .05,
+                child: InkWell(
+                  onTap: () {
+                    Navigator.pop(context);
+                  },
+                  child: SizedBox(
+                    width: 44.0,
+                    height: 44.0,
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white.withOpacity(0.4),
+                          borderRadius: BorderRadius.all(Radius.circular(10))),
+                      child: Icon(
+                        Icons.arrow_back,
+                        color: Colors.white,
+                        size: 30,
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
                   top: Get.height * .180,
                   left: Get.width * .05,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
+                  child: Row(
                     children: [
-                      Text("Courses",
-                          style: AppStyle.customTextstyle(
-                              Colors.white, FontWeight.w700, 24)),
-                      Text("Choose What to Learn",
-                          style: AppStyle.customTextstyle(
-                              Colors.white, FontWeight.w400, 22)),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Courses",
+                              style: AppStyle.customTextstyle(
+                                  Colors.white, FontWeight.w700, 24)),
+                          Text("Choose What to Learn",
+                              style: AppStyle.customTextstyle(
+                                  Colors.white, FontWeight.w400, 22)),
+                        ],
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      CourseScreenSvg(),
                     ],
                   )),
               Container(
@@ -71,6 +103,18 @@ class Courses extends StatelessWidget {
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, bottom: 10),
+                                  child: Container(
+                                    width: Get.width / 4.5,
+                                    height: 6.0,
+                                    decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(3.0),
+                                      color: const Color(0xfff8f8f8),
+                                    ),
+                                  ),
+                                ),
                                 Row(
                                   mainAxisAlignment:
                                       MainAxisAlignment.spaceEvenly,
