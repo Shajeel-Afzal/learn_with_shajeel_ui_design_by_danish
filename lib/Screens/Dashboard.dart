@@ -1,4 +1,5 @@
 import 'package:course/Utils/AppStyle.dart';
+import 'package:course/Widgets/BottomNavigationBar.dart';
 import 'package:course/Widgets/Dashboardsvg.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -14,7 +15,7 @@ class Dashboard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-                height: Get.height / 1.8,
+                height: Get.height / 1.95,
                 width: Get.width,
                 color: Colors.transparent,
                 child: new Container(
@@ -49,30 +50,30 @@ class Dashboard extends StatelessWidget {
                           ),
                         ),
                       ),
-                       Positioned(
-                top: Get.height * .055,
-                right: Get.width * .05,
-                child: InkWell(
-                  onTap: () {
-                    Navigator.pop(context);
-                  },
-                  child: SizedBox(
-                    width: 44.0,
-                    height: 44.0,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Colors.white.withOpacity(0.4),
-                          borderRadius: BorderRadius.all(Radius.circular(10))),
-                      child: Icon(
-                        Icons.menu,
-                        color: Colors.white,
-                        size: 25,
+                      Positioned(
+                        top: Get.height * .055,
+                        right: Get.width * .05,
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.pop(context);
+                          },
+                          child: SizedBox(
+                            width: 44.0,
+                            height: 44.0,
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Colors.white.withOpacity(0.4),
+                                  borderRadius:
+                                      BorderRadius.all(Radius.circular(10))),
+                              child: Icon(
+                                Icons.menu,
+                                color: Colors.white,
+                                size: 25,
+                              ),
+                            ),
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-                ),
-              ),
-             
                       Positioned(
                         top: Get.height * .21,
                         left: Get.width / 16,
@@ -81,13 +82,22 @@ class Dashboard extends StatelessWidget {
                                 Colors.white, FontWeight.bold, 26)),
                       ),
                       Positioned(
+                        top: Get.height / 10.15,
+                        right: -10,
+                        child: SvgPicture.asset(
+                          "asset/body.svg",
+                          allowDrawingOutsideViewBox: true,
+                          fit: BoxFit.fill,
+                          height: 380,
+                        ),
+                      ),
+                      Positioned(
                         top: Get.height * .31,
                         left: Get.width / 30,
                         child: Container(
-                          width: 310.0,
-                          height: 150.0,
+                          width: Get.width / 1.136,
+                          height: Get.height / 5.41,
                           decoration: BoxDecoration(
-                              //  border: Border.all(color: Colors.black),
                               borderRadius: BorderRadius.circular(40.0),
                               color: Color(0xfffef3f3)),
                           child: Padding(
@@ -102,8 +112,8 @@ class Dashboard extends StatelessWidget {
                                         FontWeight.w700,
                                         26)),
                                 Container(
-                                  width: 160.0,
-                                  height: 50.0,
+                                  width: Get.width / 2.3437,
+                                  height: Get.height / 17.5,
                                   decoration: BoxDecoration(
                                       //   border: Border.all(color: Colors.white),
                                       borderRadius: BorderRadius.circular(20.0),
@@ -134,7 +144,7 @@ class Dashboard extends StatelessWidget {
                       ),
                       Positioned(
                           top: Get.height * .40,
-                          right: Get.width / 20,
+                          right: Get.width / 30,
                           child: DashBoardSvg()),
                     ],
                   ),
@@ -152,8 +162,12 @@ class Dashboard extends StatelessWidget {
                           Color(0xff315f72), FontWeight.w700, 24)),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(right:10.0,top: 5),
-                  child: Icon(Icons.arrow_forward_ios,size: 20,color: Color(0xff315f72),),
+                  padding: const EdgeInsets.only(right: 10.0, top: 5),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    size: 20,
+                    color: Color(0xff315f72),
+                  ),
                 )
               ],
             ),
@@ -258,11 +272,14 @@ class Dashboard extends StatelessWidget {
                       style: AppStyle.customTextstyle(
                           Color(0xff315f72), FontWeight.w700, 24)),
                 ),
-                 Padding(
-                  padding: const EdgeInsets.only(right:10.0,top: 5),
-                  child: Icon(Icons.arrow_forward_ios,size: 20,color: Color(0xff315f72),),
+                Padding(
+                  padding: const EdgeInsets.only(right: 10.0, top: 5),
+                  child: Icon(
+                    Icons.arrow_forward_ios,
+                    size: 20,
+                    color: Color(0xff315f72),
+                  ),
                 )
-              
               ],
             ),
             SizedBox(
@@ -349,52 +366,26 @@ class Dashboard extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 5.0, top: 5),
-              child: Column(
-                children: [
-                  Icon(Icons.home,size: 30,color: Color(0xff0252b3)),
-                  Text("Home",
-                      style: AppStyle.customTextstyle(
-                          Color(0xff0252b3), FontWeight.w600, 16)),
-                ],
-              ),
+            BottomNavigationWidget(
+              icon: "home",
+              title: "Home",
             ),
-              Padding(
-              padding: const EdgeInsets.only(left: 0.0, top: 5,right: 20),
-              child: Column(
-                children: [
-                  Icon(Icons.assignment,size: 30,color: Color(0xffc3c7d9)),
-                  Text("Quiz",
-                      style: AppStyle.customTextstyle(
-                          Color(0xffc3c7d9), FontWeight.w600, 16)),
-                ],
-              ),
+            BottomNavigationWidget(
+              icon: "quiz",
+              title: "Quiz",
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 20.0, top: 5),
-              child: Column(
-                children: [
-                  Icon(Icons.video_library_outlined,size: 30,color: Color(0xffc3c7d9)),
-                  Text("Playlists",
-                      style: AppStyle.customTextstyle(
-                          Color(0xffc3c7d9), FontWeight.w600, 16)),
-                ],
-              ),
+            SizedBox(
+              width: 15,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 5.0, top: 5),
-              child: Column(
-                children: [
-                  Icon(Icons.chat,size: 30,color: Color(0xffc3c7d9)),
-                  Text("Blogs",
-                      style: AppStyle.customTextstyle(
-                          Color(0xffc3c7d9), FontWeight.w600, 16)),
-                ],
-              ),
+            BottomNavigationWidget(
+              icon: "playlist",
+              title: "Playlist",
             ),
-          
-           ],
+            BottomNavigationWidget(
+              icon: "blog",
+              title: "Blog",
+            ),
+          ],
         ),
       ),
     );
