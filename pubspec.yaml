@@ -32,6 +32,7 @@ dependencies:
   get: ^3.24.0
   flutter_svg: ^0.18.0
   adobe_xd: ^1.0.0+1
+  percent_indicator: ^2.1.7+2
 dev_dependencies:
   flutter_test:
     sdk: flutter

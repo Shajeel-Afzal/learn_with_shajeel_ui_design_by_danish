@@ -1,3 +1,4 @@
+import 'package:course/Screens/Dashboard.dart';
 import 'package:course/Screens/Login.dart';
 import 'package:flutter/material.dart';
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: Dashboard(),
     );
   }
 }
