@@ -1,5 +1,6 @@
 import 'package:course/Screens/Dashboard.dart';
 import 'package:course/Screens/Login.dart';
+import 'package:course/Screens/SplashScreen.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: Dashboard(),
+      home: SplashScreen(),
+      
     );
   }
 }

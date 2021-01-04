@@ -1,6 +1,7 @@
-
 import 'package:course/Utils/AppStyle.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+
 class BottomNavigationWidget extends StatelessWidget {
   final String icon;
   final String title;
@@ -12,8 +13,14 @@ class BottomNavigationWidget extends StatelessWidget {
       padding: const EdgeInsets.only(top: 5),
       child: Column(
         children: [
-          Image.asset(
+          icon == "quiz" ?  Image.asset(
             "asset/$icon.png",
+            height: 30,
+          ):
+          SvgPicture.asset(
+            "asset/$icon.svg",
+            allowDrawingOutsideViewBox: true,
+            fit: BoxFit.fill,
             height: 30,
           ),
           Text("$title",
