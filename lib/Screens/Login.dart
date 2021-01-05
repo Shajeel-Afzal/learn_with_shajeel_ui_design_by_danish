@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreenWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -41,7 +41,9 @@ class LoginScreen extends StatelessWidget {
             // mainAxisAlignment: MainAxisAlignment.center,
             mainAxisSize: MainAxisSize.min,
             children: [
-              SizedBox(height: 50,),
+              SizedBox(
+                height: 50,
+              ),
               Container(
                 width: 105.0,
                 height: 105.0,
@@ -60,45 +62,49 @@ class LoginScreen extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20,),
+              SizedBox(
+                height: 20,
+              ),
               Text("Welcome to Learning Zone",
-                      style: AppStyle.customTextstyle(
-                          Colors.white, FontWeight.w700, 24)),
-              SizedBox(height: 20,),
+                  style: AppStyle.customTextstyle(
+                      Colors.white, FontWeight.w700, 24)),
+              SizedBox(
+                height: 20,
+              ),
               Flexible(
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
-                                  color: Colors.white,
-                                  borderRadius: new BorderRadius.only(
-                                    topLeft: const Radius.circular(40.0),
-                                    topRight: const Radius.circular(40.0),
-                                  ),),
+                    color: Colors.white,
+                    borderRadius: new BorderRadius.only(
+                      topLeft: const Radius.circular(40.0),
+                      topRight: const Radius.circular(40.0),
+                    ),
+                  ),
                   child: Column(
                     mainAxisSize: MainAxisSize.max,
                     children: [
-                    Padding(
-                                      padding:
-                                      const EdgeInsets.only(top: 10.0, bottom: 10),
-                                      child: Container(
-                                        width: Get.width / 4.5,
-                                        height: 6.0,
-                                        decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(3.0),
-                                          color: const Color(0xfff8f8f8),
-                                        ),
-                                      ),
-                                    ),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 10.0, bottom: 10),
+                        child: Container(
+                          width: Get.width / 4.5,
+                          height: 6.0,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(3.0),
+                            color: const Color(0xfff8f8f8),
+                          ),
+                        ),
+                      ),
                       Expanded(
                         child: Center(
                           child: SingleChildScrollView(
                             child: Column(
                               children: [
-                                Text("Choose type of login or register",
-                                    style: AppStyle.customTextstyle(
-                                        Colors.black, FontWeight.w300, 22),
+                                Text(
+                                  "Choose type of login or register",
+                                  style: AppStyle.customTextstyle(
+                                      Colors.black, FontWeight.w300, 22),
                                 ),
-
                                 SizedBox(
                                   height: 20,
                                 ),
@@ -175,11 +181,12 @@ class LoginScreen extends StatelessWidget {
                                     Text(" & ",
                                         style: AppStyle.customTextstyle(
                                             Colors.black, FontWeight.w700, 14)),
-                                    Text("Privacy Policy",
-                                        style: AppStyle.customTextstyle(
-                                            Color(0xff7ebf3d),
-                                            FontWeight.w700,
-                                            14),
+                                    Text(
+                                      "Privacy Policy",
+                                      style: AppStyle.customTextstyle(
+                                          Color(0xff7ebf3d),
+                                          FontWeight.w700,
+                                          14),
                                     ),
                                   ],
                                 ),
@@ -189,7 +196,8 @@ class LoginScreen extends StatelessWidget {
                         ),
                       )
                     ],
-                ),),
+                  ),
+                ),
               ),
             ],
           ),
@@ -223,7 +231,6 @@ class LoginScreen extends StatelessWidget {
           //       style: AppStyle.customTextstyle(
           //           Colors.white, FontWeight.w700, 24)),
           // ),
-
 
           // Container(
           //   padding: EdgeInsets.symmetric(horizontal: 0),
