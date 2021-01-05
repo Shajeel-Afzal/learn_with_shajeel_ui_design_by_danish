@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 25 25">
+  <g id="Group_23" data-name="Group 23" transform="translate(280 -1938)">
+    <g id="Group_20" data-name="Group 20" transform="translate(-280 1941)">
+      <path id="Path_489" data-name="Path 489" d="M-302.224,1903.421v6.477l8.089-6.477Z" transform="translate(306 -1887.898)" fill="#c0c5d8"/>
+      <g id="Rectangle_43" data-name="Rectangle 43" fill="#fff" stroke="#c0c5d8" stroke-width="1">
+        <rect width="25" height="16.102" stroke="none"/>
+        <rect x="0.5" y="0.5" width="24" height="15.102" fill="none"/>
+      </g>
+    </g>
+    <line id="Line_5" data-name="Line 5" x2="19" transform="translate(-276.5 1945.617)" fill="none" stroke="#c0c5d8" stroke-width="1"/>
+    <line id="Line_6" data-name="Line 6" x2="19" transform="translate(-276.5 1950.098)" fill="none" stroke="#c0c5d8" stroke-width="1"/>
+    <line id="Line_7" data-name="Line 7" x2="19" transform="translate(-276.5 1953.682)" fill="none" stroke="#c0c5d8" stroke-width="1"/>
+    <g id="Group_22" data-name="Group 22" transform="translate(-276.297 1938)">
+      <rect id="Rectangle_45" data-name="Rectangle 45" width="5.018" height="11.014" fill="#c0c5d8"/>
+      <g id="Group_21" data-name="Group 21" transform="translate(0.54 7.343)">
+        <path id="Path_491" data-name="Path 491" d="M.961,0l.991,1.85L0,1.82Z" transform="matrix(-1, -0.017, 0.017, -1, 2.893, 6.764)" fill="#c0c5d8"/>
+        <path id="Path_490" data-name="Path 490" d="M-343.807,1940l1.968,3.424-1.968,3.424-1.968-3.424Z" transform="translate(345.775 -1940)" fill="none" stroke="#c0c5d8" stroke-width="1"/>
+      </g>
+    </g>
+  </g>
+</svg>
