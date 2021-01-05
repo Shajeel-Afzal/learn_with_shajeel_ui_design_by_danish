@@ -1,11 +1,12 @@
 import 'package:course/Screens/Dashboard.dart';
 import 'package:course/Screens/Login.dart';
-import 'package:course/Screens/SplashScreen.dart';
+import 'package:course/Screens/Login.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
 import 'Screens/Courses.dart';
+import 'Screens/Login.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,8 +24,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
-      
+      home: LoginScreenWidget(),
     );
   }
 }
