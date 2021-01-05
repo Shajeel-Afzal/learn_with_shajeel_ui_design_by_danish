@@ -26,21 +26,26 @@ class Loginbuttons extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          SizedBox(
-            width: 10,
-          ),
           icon != null
-              ? Image.asset(
-                  'asset/$icon',
-                  height: 25,
-                  width: 25,
-                )
+              ? Row(
+                children: [
+                  SizedBox(
+                    width: 10,
+                  ),
+                  Image.asset(
+                      'asset/$icon',
+                      height: 25,
+                      width: 25,
+                    ),
+                ],
+              )
               : SizedBox(),
-          SizedBox(
-            width: 35,
+          Expanded(
+            child: Center(
+              child: Text("$title",
+                  style: AppStyle.customTextstyle(textcolor, FontWeight.w500, 20)),
+            ),
           ),
-          Text("$title",
-              style: AppStyle.customTextstyle(textcolor, FontWeight.w500, 20)),
         ],
       ),
     );

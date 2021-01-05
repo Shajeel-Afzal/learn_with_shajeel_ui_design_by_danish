@@ -11,6 +11,7 @@ class LoginScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xfff08c8e),
       body: Stack(
+        fit: StackFit.expand,
         children: [
           Positioned(
             top: -Get.height * .15,
@@ -35,175 +36,344 @@ class LoginScreen extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: Get.height * .070,
-            left: Get.width / 3,
-            child: Container(
-              width: 105.0,
-              height: 105.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(183.0),
-                image: DecorationImage(
-                  image: const AssetImage('asset/m.jpg'),
-                  fit: BoxFit.fill,
-                ),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0x40000000),
-                    offset: Offset(0, 3),
-                    blurRadius: 20,
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            // mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(height: 50,),
+              Container(
+                width: 105.0,
+                height: 105.0,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(183.0),
+                  image: DecorationImage(
+                    image: const AssetImage('asset/m.jpg'),
+                    fit: BoxFit.fill,
                   ),
-                ],
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0x40000000),
+                      offset: Offset(0, 3),
+                      blurRadius: 20,
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ),
-          Positioned(
-            top: Get.height * .22,
-            left: Get.width / 9,
-            child: Text("Welcome to Learning Zone",
-                style: AppStyle.customTextstyle(
-                    Colors.white, FontWeight.w700, 24)),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                SizedBox(height: Get.height * .28),
-                Container(
-                  height: Get.height / 1.389,
-                  width: Get.width,
-                  color: Colors.transparent,
-                  child: new Container(
-                      decoration: new BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: new BorderRadius.only(
-                            topLeft: const Radius.circular(40.0),
-                            topRight: const Radius.circular(40.0),
-                          )),
-                      child: SingleChildScrollView(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 10.0, bottom: 10),
-                              child: Container(
-                                width: Get.width / 4.5,
-                                height: 6.0,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(3.0),
-                                  color: const Color(0xfff8f8f8),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Text("Choose type of login or register",
-                                style: AppStyle.customTextstyle(
-                                    Colors.black, FontWeight.w300, 22)),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Loginbuttons(
-                              textcolor: Colors.white,
-                              title: "Login with Apple",
-                              icon: "apple.png",
-                              contcolor: Colors.black,
-                              bordercolor: Colors.black,
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Loginbuttons(
-                              textcolor: Colors.white,
-                              title: "Login with Gmail",
-                              icon: "gmail.png",
-                              contcolor: Color(0xffdb4c39),
-                              bordercolor: Color(0xffdb4c39),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Loginbuttons(
-                              textcolor: Colors.white,
-                              title: "Login with Facebook",
-                              icon: "facebook.png",
-                              contcolor: Color(0xff3a5797),
-                              bordercolor: Color(0xff3a5797),
-                            ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
+              SizedBox(height: 20,),
+              Text("Welcome to Learning Zone",
+                      style: AppStyle.customTextstyle(
+                          Colors.white, FontWeight.w700, 24)),
+              SizedBox(height: 20,),
+              Flexible(
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: new BorderRadius.only(
+                                    topLeft: const Radius.circular(40.0),
+                                    topRight: const Radius.circular(40.0),
+                                  ),),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                    Padding(
+                                      padding:
+                                      const EdgeInsets.only(top: 10.0, bottom: 10),
+                                      child: Container(
+                                        width: Get.width / 4.5,
+                                        height: 6.0,
+                                        decoration: BoxDecoration(
+                                          borderRadius: BorderRadius.circular(3.0),
+                                          color: const Color(0xfff8f8f8),
+                                        ),
+                                      ),
+                                    ),
+                      Expanded(
+                        child: Center(
+                          child: SingleChildScrollView(
+                            child: Column(
                               children: [
-                                SvgPicture.string(
-                                  '<svg viewBox="207.6 572.4 116.0 1.0" ><path transform="translate(207.55, 572.44)" d="M 0 0 L 116.0156631469727 0" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
-                                  allowDrawingOutsideViewBox: true,
-                                ),
-                                Text(" OR ",
+                                Text("Choose type of login or register",
                                     style: AppStyle.customTextstyle(
-                                        Colors.black, FontWeight.w700, 18)),
-                                SvgPicture.string(
-                                  '<svg viewBox="207.6 572.4 116.0 1.0" ><path transform="translate(207.55, 572.44)" d="M 0 0 L 116.0156631469727 0" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
-                                  allowDrawingOutsideViewBox: true,
+                                        Colors.black, FontWeight.w300, 22),
+                                ),
+
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Loginbuttons(
+                                  textcolor: Colors.white,
+                                  title: "Login with Apple",
+                                  icon: "apple.png",
+                                  contcolor: Colors.black,
+                                  bordercolor: Colors.black,
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Loginbuttons(
+                                  textcolor: Colors.white,
+                                  title: "Login with Gmail",
+                                  icon: "gmail.png",
+                                  contcolor: Color(0xffdb4c39),
+                                  bordercolor: Color(0xffdb4c39),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Loginbuttons(
+                                  textcolor: Colors.white,
+                                  title: "Login with Facebook",
+                                  icon: "facebook.png",
+                                  contcolor: Color(0xff3a5797),
+                                  bordercolor: Color(0xff3a5797),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    SvgPicture.string(
+                                      '<svg viewBox="207.6 572.4 116.0 1.0" ><path transform="translate(207.55, 572.44)" d="M 0 0 L 116.0156631469727 0" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
+                                      allowDrawingOutsideViewBox: true,
+                                    ),
+                                    Text(" OR ",
+                                        style: AppStyle.customTextstyle(
+                                            Colors.black, FontWeight.w700, 18)),
+                                    SvgPicture.string(
+                                      '<svg viewBox="207.6 572.4 116.0 1.0" ><path transform="translate(207.55, 572.44)" d="M 0 0 L 116.0156631469727 0" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
+                                      allowDrawingOutsideViewBox: true,
+                                    ),
+                                  ],
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                InkWell(
+                                  onTap: () {
+                                    Get.to(Courses());
+                                  },
+                                  child: Loginbuttons(
+                                    textcolor: Colors.black,
+                                    title: "        Try Without Login",
+                                    bordercolor: Colors.black,
+                                  ),
+                                ),
+                                SizedBox(
+                                  height: 20,
+                                ),
+                                Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Text("Terms of Use",
+                                        style: AppStyle.customTextstyle(
+                                            Color(0xff7ebf3d),
+                                            FontWeight.w600,
+                                            14)),
+                                    Text(" & ",
+                                        style: AppStyle.customTextstyle(
+                                            Colors.black, FontWeight.w700, 14)),
+                                    Text("Privacy Policy",
+                                        style: AppStyle.customTextstyle(
+                                            Color(0xff7ebf3d),
+                                            FontWeight.w700,
+                                            14),
+                                    ),
+                                  ],
                                 ),
                               ],
                             ),
-                            SizedBox(
-                              height: 20,
-                            ),
-                            Loginbuttons(
-                              textcolor: Colors.white,
-                              title: "Signup with Email",
-                              icon: "mail.png",
-                              contcolor: Color(0xff7ebf3d),
-                              bordercolor: Color(0xff7ebf3d),
-                            ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            InkWell(
-                              onTap: () {
-                                Get.to(Courses());
-                              },
-                              child: Loginbuttons(
-                                textcolor: Colors.black,
-                                title: "        Try Without Login",
-                                bordercolor: Colors.black,
-                              ),
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Text("Terms of Use",
-                                      style: AppStyle.customTextstyle(
-                                          Color(0xff7ebf3d),
-                                          FontWeight.w600,
-                                          14)),
-                                  Text(" & ",
-                                      style: AppStyle.customTextstyle(
-                                          Colors.black, FontWeight.w700, 14)),
-                                  Text("Privacy Policy",
-                                      style: AppStyle.customTextstyle(
-                                          Color(0xff7ebf3d),
-                                          FontWeight.w700,
-                                          14)),
-                                ],
-                              ),
-                            )
-                          ],
+                          ),
                         ),
-                      )),
-                ),
-              ],
-            ),
+                      )
+                    ],
+                ),),
+              ),
+            ],
           ),
+          // Positioned(
+          //   top: Get.height * .070,
+          //   left: Get.width / 3,
+          //   child: Container(
+          //     width: 105.0,
+          //     height: 105.0,
+          //     decoration: BoxDecoration(
+          //       borderRadius: BorderRadius.circular(183.0),
+          //       image: DecorationImage(
+          //         image: const AssetImage('asset/m.jpg'),
+          //         fit: BoxFit.fill,
+          //       ),
+          //       boxShadow: [
+          //         BoxShadow(
+          //           color: const Color(0x40000000),
+          //           offset: Offset(0, 3),
+          //           blurRadius: 20,
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+
+          // Positioned(
+          //   top: Get.height * .22,
+          //   left: Get.width / 9,
+          //   child: Text("Welcome to Learning Zone",
+          //       style: AppStyle.customTextstyle(
+          //           Colors.white, FontWeight.w700, 24)),
+          // ),
+
+
+          // Container(
+          //   padding: EdgeInsets.symmetric(horizontal: 0),
+          //   child: Column(
+          //     crossAxisAlignment: CrossAxisAlignment.center,
+          //     mainAxisAlignment: MainAxisAlignment.center,
+          //     children: <Widget>[
+          //       SizedBox(height: Get.height * .28),
+          //       Container(
+          //         height: Get.height / 1.389,
+          //         width: Get.width,
+          //         child: new Container(
+          //             decoration: new BoxDecoration(
+          //                 color: Colors.white,
+          //                 borderRadius: new BorderRadius.only(
+          //                   topLeft: const Radius.circular(40.0),
+          //                   topRight: const Radius.circular(40.0),
+          //                 )),
+          //             child: Column(
+          //               children: [
+          //                 Padding(
+          //                   padding:
+          //                   const EdgeInsets.only(top: 10.0, bottom: 10),
+          //                   child: Container(
+          //                     width: Get.width / 4.5,
+          //                     height: 6.0,
+          //                     decoration: BoxDecoration(
+          //                       borderRadius: BorderRadius.circular(3.0),
+          //                       color: const Color(0xfff8f8f8),
+          //                     ),
+          //                   ),
+          //                 ),
+          //                 Expanded(
+          //                   child: Center(
+          //                     child: SingleChildScrollView(
+          //                       child: Column(
+          //                         mainAxisAlignment: MainAxisAlignment.center,
+          //                         mainAxisSize: MainAxisSize.max,
+          //                         crossAxisAlignment: CrossAxisAlignment.center,
+          //                         children: [
+          //                           SizedBox(
+          //                             height: 20,
+          //                           ),
+          //                           Text("Choose type of login or register",
+          //                               style: AppStyle.customTextstyle(
+          //                                   Colors.black, FontWeight.w300, 22)),
+          //                           SizedBox(
+          //                             height: 20,
+          //                           ),
+          //                           Loginbuttons(
+          //                             textcolor: Colors.white,
+          //                             title: "Login with Apple",
+          //                             icon: "apple.png",
+          //                             contcolor: Colors.black,
+          //                             bordercolor: Colors.black,
+          //                           ),
+          //                           SizedBox(
+          //                             height: 20,
+          //                           ),
+          //                           Loginbuttons(
+          //                             textcolor: Colors.white,
+          //                             title: "Login with Gmail",
+          //                             icon: "gmail.png",
+          //                             contcolor: Color(0xffdb4c39),
+          //                             bordercolor: Color(0xffdb4c39),
+          //                           ),
+          //                           SizedBox(
+          //                             height: 20,
+          //                           ),
+          //                           // Loginbuttons(
+          //                           //   textcolor: Colors.white,
+          //                           //   title: "Login with Facebook",
+          //                           //   icon: "facebook.png",
+          //                           //   contcolor: Color(0xff3a5797),
+          //                           //   bordercolor: Color(0xff3a5797),
+          //                           // ),
+          //                           // SizedBox(
+          //                           //   height: 20,
+          //                           // ),
+          //                           Row(
+          //                             mainAxisAlignment: MainAxisAlignment.center,
+          //                             children: [
+          //                               SvgPicture.string(
+          //                                 '<svg viewBox="207.6 572.4 116.0 1.0" ><path transform="translate(207.55, 572.44)" d="M 0 0 L 116.0156631469727 0" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
+          //                                 allowDrawingOutsideViewBox: true,
+          //                               ),
+          //                               Text(" OR ",
+          //                                   style: AppStyle.customTextstyle(
+          //                                       Colors.black, FontWeight.w700, 18)),
+          //                               SvgPicture.string(
+          //                                 '<svg viewBox="207.6 572.4 116.0 1.0" ><path transform="translate(207.55, 572.44)" d="M 0 0 L 116.0156631469727 0" fill="none" stroke="#000000" stroke-width="1" stroke-miterlimit="4" stroke-linecap="butt" /></svg>',
+          //                                 allowDrawingOutsideViewBox: true,
+          //                               ),
+          //                             ],
+          //                           ),
+          //                           SizedBox(
+          //                             height: 20,
+          //                           ),
+          //                           // Loginbuttons(
+          //                           //   textcolor: Colors.white,
+          //                           //   title: "Signup with Email",
+          //                           //   icon: "mail.png",
+          //                           //   contcolor: Color(0xff7ebf3d),
+          //                           //   bordercolor: Color(0xff7ebf3d),
+          //                           // ),
+          //                           // SizedBox(
+          //                           //   height: 30,
+          //                           // ),
+          //                           InkWell(
+          //                             onTap: () {
+          //                               Get.to(Courses());
+          //                             },
+          //                             child: Loginbuttons(
+          //                               textcolor: Colors.black,
+          //                               title: "        Try Without Login",
+          //                               bordercolor: Colors.black,
+          //                             ),
+          //                           ),
+          //                           SizedBox(
+          //                             height: 20,
+          //                           ),
+          //                           Row(
+          //                             mainAxisAlignment: MainAxisAlignment.center,
+          //                             children: [
+          //                               Text("Terms of Use",
+          //                                   style: AppStyle.customTextstyle(
+          //                                       Color(0xff7ebf3d),
+          //                                       FontWeight.w600,
+          //                                       14)),
+          //                               Text(" & ",
+          //                                   style: AppStyle.customTextstyle(
+          //                                       Colors.black, FontWeight.w700, 14)),
+          //                               Text("Privacy Policy",
+          //                                   style: AppStyle.customTextstyle(
+          //                                       Color(0xff7ebf3d),
+          //                                       FontWeight.w700,
+          //                                       14)),
+          //                             ],
+          //                           )
+          //                         ],
+          //                       ),
+          //                     ),
+          //                   ),
+          //                 ),
+          //               ],
+          //             )),
+          //       ),
+          //     ],
+          //   ),
+          // ),
         ],
       ),
     );
